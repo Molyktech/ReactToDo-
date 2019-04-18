@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Reminder: store data in local storage, add a checkbox to toggle all to dos as completed
+
 ## Available Scripts
 
 In the project directory, you can run:

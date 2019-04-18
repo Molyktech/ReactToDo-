@@ -32,6 +32,7 @@ class App extends Component {
     };
 
     // add the object to the array in the state using the spread operator
+    //spread the items in the array into a list and add at the end. push method doesnt quite work because we dont want to mutate or modify the state
     if (this.state.todoItem) {
       const updatedArray = [...this.state.todoItems, newTodo];
       this.setState({
@@ -70,11 +71,24 @@ class App extends Component {
 
   handleComplete = id => {
     const selectedTodo = this.state.todoItems.find(item => item.id === id);
-
     selectedTodo.completed = !selectedTodo.completed;
     this.setState({
       todoItems: this.state.todoItems
     });
+  };
+
+  handleToDoCompleted = event => {
+    const completedTodos = this.state.todoItems.map(todo => {
+      return {
+        title: todo.title,
+        id: todo.id,
+        completed: event.target.checked
+      };
+    });
+    this.setState({
+      todoItems: completedTodos
+    });
+    console.log(this.state.todoItems);
   };
   render() {
     return (
@@ -95,6 +109,7 @@ class App extends Component {
               handleDelete={this.handleDelete}
               handleEdit={this.handleEdit}
               handleComplete={this.handleComplete}
+              handleToDoCompleted={this.handleToDoCompleted}
             />
           </div>
         </div>

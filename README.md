@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Reminder: store data in local storage, add a checkbox to toggle all to dos as completed
+Reminder to do: store data in local storage, add a link to show only completed todos, undone to dos and all todos
 
 ## Available Scripts
 
